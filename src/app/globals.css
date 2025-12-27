@@ -711,3 +711,119 @@ body {
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
+
+/* --- A-Frame Device Orientation Permission UI Customization --- */
+.a-device-orientation-permission-modal {
+  background: rgba(0, 15, 12, 0.98) !important;
+  backdrop-filter: blur(20px) !important;
+  z-index: 10000 !important;
+}
+
+.a-device-orientation-permission-dialog {
+  background: rgba(0, 45, 34, 0.95) !important;
+  border: 1px solid rgba(0, 191, 138, 0.5) !important;
+  border-radius: 24px !important;
+  box-shadow: 0 0 60px rgba(0, 191, 138, 0.3) !important;
+  padding: 40px !important;
+  max-width: 400px !important;
+  font-family: var(--font-rajdhani), sans-serif !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+}
+
+.a-device-orientation-permission-dialog-text {
+  color: #ccffef !important;
+  font-size: 1.1rem !important;
+  line-height: 1.6 !important;
+  text-align: center !important;
+  margin-top: 20px !important;
+  margin-bottom: 30px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+.a-device-orientation-permission-dialog-buttons {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 15px !important;
+  width: 100% !important;
+}
+
+.a-device-orientation-permission-dialog-allow-button {
+  background: #00bf8a !important;
+  color: #000 !important;
+  border-radius: 12px !important;
+  padding: 16px 32px !important;
+  font-weight: 800 !important;
+  font-size: 1rem !important;
+  border: none !important;
+  cursor: pointer !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.15em !important;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 10px 20px rgba(0, 191, 138, 0.2) !important;
+}
+
+.a-device-orientation-permission-dialog-allow-button:hover {
+  background: #33ffbf !important;
+  transform: translateY(-2px) !important;
+  box-shadow: 0 15px 30px rgba(0, 191, 138, 0.4) !important;
+}
+
+.a-device-orientation-permission-dialog-deny-button {
+  background: rgba(255, 255, 255, 0.05) !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 12px !important;
+  padding: 12px !important;
+  transition: all 0.3s ease !important;
+}
+
+.a-device-orientation-permission-dialog-deny-button:hover {
+  background: rgba(255, 255, 255, 0.1) !important;
+  color: white !important;
+}
+
+/* Add Medallion to the dialog */
+.a-device-orientation-permission-dialog:before {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 80px;
+  background-image: url('/Medallions/TLN.png');
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: drop-shadow(0 0 10px rgba(0, 191, 138, 0.5));
+  animation: pulse-glow 2s infinite ease-in-out;
+}
+
+/* VR Button Customization */
+.a-enter-vr-button {
+  background-color: rgba(0, 15, 12, 0.6) !important;
+  border: 1px solid rgba(0, 191, 138, 0.3) !important;
+  backdrop-filter: blur(8px) !important;
+  border-radius: 12px !important;
+  transition: all 0.3s ease !important;
+  width: 50px !important;
+  height: 50px !important;
+}
+
+.a-enter-vr-button:hover {
+  background-color: rgba(0, 191, 138, 0.2) !important;
+  border-color: rgba(0, 191, 138, 0.6) !important;
+}
+
+/* Loader styling */
+.a-loader-title {
+  color: #00bf8a !important;
+  font-family: var(--font-rajdhani), sans-serif !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.3em !important;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { transform: scale(1); filter: drop-shadow(0 0 10px rgba(0, 191, 138, 0.3)); }
+  50% { transform: scale(1.05); filter: drop-shadow(0 0 20px rgba(0, 191, 138, 0.6)); }
+}
