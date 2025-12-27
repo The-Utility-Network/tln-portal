@@ -11,6 +11,7 @@ import LearnPanel from './Learn';
 import TheSatelliteProjectRepository from './TheSatelliteProjectRepository';
 import Mythology from './Mythology';
 import Reserve from './Reserve';
+import MotionPermission from './MotionPermission';
 
 function VRBackground() {
   const [currentView, setCurrentView] = useState('Diamond Viewer');
@@ -144,6 +145,14 @@ function VRBackground() {
           onLoad={() => setIsLoaded(true)}
         />
       </div>
+
+      {/* Motion Sensor Permission Modal (Mobile only) */}
+      <MotionPermission
+        onGranted={() => {
+          console.log("Motion Permission Granted");
+          // Optionally trigger a refresh of the A-Frame orientation if needed
+        }}
+      />
 
       {/* Loading Overlay */}
       {!isLoaded && (

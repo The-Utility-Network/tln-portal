@@ -117,7 +117,7 @@ const VRScene: React.FC<VRSceneProps> = ({ onLoad }) => {
       embedded
       detect-user-interaction
       auto-rotate
-      device-orientation-permission-ui="deviceMotionMessage: THE LOCH NESS BOTANICAL SOCIETY REQUESTS ACCESS TO YOUR DEVICE SENSORS TO INITIALIZE THE VR PORTAL.; allowButtonText: GRANT ACCESS; denyButtonText: DENY; cancelButtonText: CANCEL"
+      device-orientation-permission-ui="enabled: false"
       background="color: #000000"
       style={{ width: '100%', height: '100vh' }}
     >
