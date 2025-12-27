@@ -25,11 +25,12 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['img.reservoir.tools'], // Add other domains as needed
-    // You can also specify other image configurations here
-  },
-  experimental: {
-    turbopack: {},
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'img.reservoir.tools',
+      },
+    ],
   },
 };
 

@@ -191,7 +191,7 @@ const Reserve = () => {
         client: await clientPromise as any,
         chain: base,
         address: contractAddr as string,
-        abi: abi,
+        abi: abi as any,
       });
 
       const beneficiariesData = await readContract({
@@ -215,7 +215,7 @@ const Reserve = () => {
         client: await clientPromise as any,
         chain: base,
         address: contractAddr as string,
-        abi: abi,
+        abi: abi as any,
       });
 
       const hasRole = await readContract({
@@ -411,7 +411,7 @@ const Reserve = () => {
         client: await clientPromise as any,
         chain: base,
         address: contractAddr as string,
-        abi: abi,
+        abi: abi as any,
       });
 
       const tx = await prepareContractCall({
@@ -454,7 +454,7 @@ const Reserve = () => {
         client: await clientPromise as any,
         chain: base,
         address: contractAddr as string,
-        abi: abi,
+        abi: abi as any,
       });
 
       const tx = await prepareContractCall({
@@ -494,7 +494,7 @@ const Reserve = () => {
         client: await clientPromise as any,
         chain: base,
         address: contractAddr as string,
-        abi: abi,
+        abi: abi as any,
       });
 
       const tx = await prepareContractCall({
@@ -529,7 +529,7 @@ const Reserve = () => {
         client: await clientPromise as any,
         chain: base,
         address: await getContractAddress() as string,
-        abi: abi,
+        abi: abi as any,
       });
 
       let tx;
