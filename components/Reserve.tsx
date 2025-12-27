@@ -20,8 +20,8 @@ import {
   readContract,
   prepareContractCall,
   sendAndConfirmTransaction,
-  createThirdwebClient,
 } from 'thirdweb';
+import { getThirdwebClient } from '../src/utils/createThirdwebClient';
 import { base } from 'thirdweb/chains';
 import {
   PieChart,
@@ -41,11 +41,7 @@ import { getDiamondAddress } from '../primitives/Diamond';
 import { ReserveABI as abi } from '../primitives/TSPABI';
 
 // Initialize the client
-const clientPromise = Promise.resolve(
-  process.env.NEXT_PUBLIC_THIRDWEB_CLIENT
-    ? createThirdwebClient({ clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT })
-    : null
-);
+const clientPromise = Promise.resolve(getThirdwebClient());
 
 // Contract Address
 let contractAddressPromise: Promise<string> | null = null;

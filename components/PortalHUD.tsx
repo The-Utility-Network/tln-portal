@@ -2,9 +2,9 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { useActiveAccount, ConnectButton, darkTheme } from "thirdweb/react";
-import { createThirdwebClient } from "thirdweb";
 import { inAppWallet, createWallet } from "thirdweb/wallets";
 import { base } from "thirdweb/chains";
+import { getThirdwebClient } from '../src/utils/createThirdwebClient';
 import {
     ChatBubbleLeftRightIcon,
     CurrencyDollarIcon,
@@ -17,9 +17,7 @@ import {
     SparklesIcon
 } from "@heroicons/react/24/outline";
 
-const client = createThirdwebClient({
-    clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT as string,
-});
+const client = getThirdwebClient();
 
 interface PortalHUDProps {
     onNavigate: (view: string) => void;

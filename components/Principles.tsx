@@ -16,20 +16,15 @@ import {
   readContract,
   prepareContractCall,
   sendAndConfirmTransaction,
-  createThirdwebClient,
 } from 'thirdweb';
+import { getThirdwebClient } from '../src/utils/createThirdwebClient';
 import { useActiveWallet } from 'thirdweb/react';
 import { base } from 'thirdweb/chains';
 import { getDiamondAddress } from '../primitives/Diamond';
 
 // Browser-safe Thirdweb client getter
-let principlesClientCache: any | null = null;
 async function getThirdwebBrowserClient() {
-  if (principlesClientCache) return principlesClientCache;
-  const clientId = process.env.NEXT_PUBLIC_THIRDWEB_CLIENT;
-  if (!clientId) throw new Error('Thirdweb client is not configured');
-  principlesClientCache = createThirdwebClient({ clientId });
-  return principlesClientCache;
+  return getThirdwebClient();
 }
 
 // Replace with your actual contract address

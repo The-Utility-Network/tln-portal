@@ -1,7 +1,8 @@
 'use client';
 import React, { useState, useEffect, useRef, useCallback, memo } from 'react';
 import { getFacets, getDiamondAddress } from '../primitives/Diamond';
-import { prepareContractCall, sendAndConfirmTransaction, readContract, getContract, createThirdwebClient } from 'thirdweb';
+import { prepareContractCall, sendAndConfirmTransaction, readContract, getContract } from 'thirdweb';
+import { getThirdwebClient } from '../src/utils/createThirdwebClient';
 import { base } from 'thirdweb/chains';
 import { useActiveWallet } from 'thirdweb/react';
 import { ethers } from 'ethers';
@@ -21,9 +22,7 @@ import {
 import Xarrow, { useXarrow, Xwrapper } from 'react-xarrows';
 
 // --- Client ---
-const client = createThirdwebClient({
-  clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT as string,
-});
+const client = getThirdwebClient();
 
 // --- Types ---
 interface MethodPanelProps {

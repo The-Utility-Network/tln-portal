@@ -5,7 +5,8 @@ import { Canvas, useFrame, useThree } from '@react-three/fiber';
 import { Html } from '@react-three/drei';
 import { useActiveWallet } from 'thirdweb/react';
 import * as THREE from 'three';
-import { readContract, getContract, createThirdwebClient, prepareContractCall, sendAndConfirmTransaction } from 'thirdweb';
+import { readContract, getContract, prepareContractCall, sendAndConfirmTransaction } from 'thirdweb';
+import { getThirdwebClient } from '../src/utils/createThirdwebClient';
 import { base } from 'thirdweb/chains';
 import { getDiamondAddress } from '../primitives/Diamond';
 
@@ -333,7 +334,7 @@ export default function Diamond3D({ facets, methodNames, facetNames, facetAbis =
         setBusy(true);
         setOutput('');
         try {
-            const client = createThirdwebClient({ clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT as string });
+            const client = getThirdwebClient();
             const address = diamondAddr;
             const contractDyn = getContract({ client, chain: base, address, abi: facetAbis[selection.facet] as any });
             const res = await readContract({
@@ -354,7 +355,7 @@ export default function Diamond3D({ facets, methodNames, facetNames, facetAbis =
         setBusy(true);
         setOutput('');
         try {
-            const client = createThirdwebClient({ clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT as string });
+            const client = getThirdwebClient();
             const address = diamondAddr;
             const contractDyn = getContract({ client, chain: base, address, abi: facetAbis[selection.facet] as any });
             const tx = prepareContractCall({

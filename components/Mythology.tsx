@@ -4,9 +4,9 @@ import React, { useState, useEffect, useRef } from 'react';
 import {
   getContract,
   readContract,
-  createThirdwebClient,
   prepareContractCall,
 } from 'thirdweb';
+import { getThirdwebClient } from '../src/utils/createThirdwebClient';
 import { useActiveWallet, useActiveAccount, useSendTransaction } from 'thirdweb/react';
 import { base } from 'thirdweb/chains';
 import { getDiamondAddress } from '../primitives/Diamond';
@@ -32,9 +32,7 @@ import {
 } from '@heroicons/react/24/outline';
 
 // Client Init
-const client = createThirdwebClient({
-  clientId: process.env.NEXT_PUBLIC_THIRDWEB_CLIENT as string,
-});
+const client = getThirdwebClient();
 
 // Utility types
 interface Story { id: string; title: string; }
